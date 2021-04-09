@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * implments netty
+ * implments com.dut.netty
  *
  * @author algorithm
  */
