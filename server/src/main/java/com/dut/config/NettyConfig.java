@@ -25,8 +25,8 @@ import java.util.Set;
 @Configuration
 @EnableConfigurationProperties(NettyProperties.class)
 public class NettyConfig {
-    private NettyProperties nettyProperties;
-    private ServerInitializer serverInitializer;
+    private final NettyProperties nettyProperties;
+    private final ServerInitializer serverInitializer;
 
     public NettyConfig(NettyProperties nettyProperties, ServerInitializer initializer){
         this.nettyProperties = nettyProperties;

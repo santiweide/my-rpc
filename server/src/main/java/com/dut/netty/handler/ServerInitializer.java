@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServerInitializer extends ChannelInitializer<SocketChannel> {
 
-    private  ServerHandler handler;
+    private final ServerHandler handler;
 
     public ServerInitializer(ServerHandler handler){
         this.handler = handler;

@@ -1,0 +1,6 @@
+com\dut\config\NettyProperties.class
+com\dut\netty\handler\ServerHandler.class
+com\dut\netty\TcpService.class
+com\dut\netty\ChannelRepository.class
+com\dut\netty\handler\ServerInitializer.class
+com\dut\config\NettyConfig.class

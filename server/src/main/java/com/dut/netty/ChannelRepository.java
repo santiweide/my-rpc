@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ChannelRepository {
-    private Map<String, Channel> channelCacheMap = new ConcurrentHashMap<>();
+    private final Map<String, Channel> channelCacheMap = new ConcurrentHashMap<>();
 
     public ChannelRepository put(String key, Channel channel) {
         channelCacheMap.put(key, channel);
