@@ -1,7 +1,6 @@
-com\dut\model\ISerializer.class
-com\dut\utils\Constants.class
-com\dut\model\RpcEncoder.class
 com\dut\model\RpcRequest.class
+com\dut\model\ISerializer.class
 com\dut\model\JsonSerializer.class
 com\dut\model\RpcResponse.class
 com\dut\model\RpcDecoder.class
+com\dut\model\RpcEncoder.class

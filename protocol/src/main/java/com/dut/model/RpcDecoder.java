@@ -1,11 +1,9 @@
 package com.dut.model;
 
-import com.dut.utils.Constants;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -31,7 +29,7 @@ public class RpcDecoder extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List<Object> list) throws Exception {
-        if (byteBuf.readableBytes() < Constants.MIN_BUFFER_SIZE) {
+        if (byteBuf.readableBytes() < 4) {
             // 数据长度不够解码条件
             return;
         }

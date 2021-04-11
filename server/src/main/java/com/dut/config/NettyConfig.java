@@ -8,6 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,15 +26,15 @@ import java.util.Set;
 @Configuration
 @EnableConfigurationProperties(NettyProperties.class)
 public class NettyConfig {
-    private final NettyProperties nettyProperties;
-    private final ServerInitializer serverInitializer;
 
-    public NettyConfig(NettyProperties nettyProperties, ServerInitializer initializer){
-        this.nettyProperties = nettyProperties;
-        this.serverInitializer = initializer;
-    }
+    @Autowired
+    private NettyProperties nettyProperties;
 
-    public ServerBootstrap serverBootstrap() throws InterruptedException{
+    @Autowired
+    private ServerInitializer serverInitializer;
+
+    @Bean
+    public ServerBootstrap serverBootstrap() {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         /**
          *  按照debug级别打印日志

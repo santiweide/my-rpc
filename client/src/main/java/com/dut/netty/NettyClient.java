@@ -52,7 +52,7 @@ public class NettyClient implements IClient{
                 .option(ChannelOption.TCP_NODELAY, true)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
-                    protected void initChannel(SocketChannel socketChannel) throws Exception {
+                    protected void initChannel(SocketChannel socketChannel) {
                         ChannelPipeline pipeline = channel.pipeline();
                         pipeline.addLast(new LengthFieldBasedFrameDecoder(65535, 0, 4));
                         pipeline.addLast(new RpcEncoder(RpcRequest.class, new JsonSerializer()));

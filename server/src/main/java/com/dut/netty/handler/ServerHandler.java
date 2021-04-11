@@ -14,7 +14,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * Handle 服务端业务;
+ * Handle 服务端业务， 继承SimpleChannelInboundHandler
  * 如果handle 客户端业务的话继承 SimpleChannelInboundHandler
  * ChannelHandler.Shareable 标注一个channel handler可以被多个channel安全地共享。
  * @author algorithm
