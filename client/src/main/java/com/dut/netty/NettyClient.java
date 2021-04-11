@@ -6,7 +6,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 import java.net.InetSocketAddress;
@@ -47,13 +47,13 @@ public class NettyClient implements IClient{
         eventLoopGroup = new NioEventLoopGroup();
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(eventLoopGroup)
-                .channel(NioServerSocketChannel.class)
+                .channel(NioSocketChannel.class)
                 .option(ChannelOption.SO_KEEPALIVE,true)
                 .option(ChannelOption.TCP_NODELAY, true)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
-                    protected void initChannel(SocketChannel socketChannel) {
-                        ChannelPipeline pipeline = channel.pipeline();
+                    protected void initChannel(SocketChannel socketChannel) throws Exception{
+                        ChannelPipeline pipeline = socketChannel.pipeline();
                         pipeline.addLast(new LengthFieldBasedFrameDecoder(65535, 0, 4));
                         pipeline.addLast(new RpcEncoder(RpcRequest.class, new JsonSerializer()));
                         pipeline.addLast(new RpcDecoder(RpcResponse.class, new JsonSerializer()));
