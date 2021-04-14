@@ -1,4 +1,4 @@
-package com.dut.impl;
+package com.dut.rpc.server.impl;
 
 import com.dut.api.IHelloService;
 import lombok.extern.slf4j.Slf4j;

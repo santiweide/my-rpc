@@ -1,6 +1,12 @@
-com\dut\model\RpcRequest.class
 com\dut\model\ISerializer.class
+com\dut\entity\RpcRequest.class
+com\dut\model\RpcEncoder.class
+com\dut\model\RpcRequest.class
+com\dut\serialization\JsonSerialization.class
+com\dut\api\Serialization.class
+com\dut\coder\RpcDecoder.class
 com\dut\model\JsonSerializer.class
 com\dut\model\RpcResponse.class
+com\dut\coder\RpcEncoder.class
 com\dut\model\RpcDecoder.class
-com\dut\model\RpcEncoder.class
+com\dut\entity\RpcResponse.class
